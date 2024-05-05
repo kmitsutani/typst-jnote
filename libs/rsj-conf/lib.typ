@@ -12,8 +12,8 @@
   set document(title: title)
 
   // Set the Fonts
-  let gothic = ("MS PGothic", "Hiragino Kaku Gothic Pro", "IPAexGothic", "Noto Sans CJK JP")
-  let mincho = ("MS PMincho", "Hiragino Mincho Pro", "IPAexMincho", "Noto Serif CJK JP")
+  let gothic = ("Source Han Sans JP", "MS PGothic", "Hiragino Kaku Gothic Pro", "IPAexGothic", "Noto Sans CJK JP")
+  let mincho = ("Source Han Serif JP", "MS PMincho", "Hiragino Mincho Pro", "IPAexMincho", "Noto Serif CJK JP")
   let english = ("Times New Roman", "New Computer Modern")
 
   // Configure the page.
@@ -114,7 +114,7 @@
   }
 
   // Start two column mode and configure paragraph properties.
-  show: columns.with(2, gutter: 8mm)
+  // show: columns.with(2, gutter: 8mm)
 
   // Display the paper's contents.
   body
