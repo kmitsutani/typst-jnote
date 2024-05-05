@@ -1,5 +1,5 @@
 # 英文学術論文誌
-AsymptoticEggSize:
+zouyama2015theory:
     type: Article
     title: Asymptotic size limit of two-entangled elephants egg in generalized homogeneous environment
     author: ["Zouyama, Zoutarou"]
@@ -13,10 +13,10 @@ AsymptoticEggSize:
         publisher: JSPS
 
 # 和文学術論文誌
-kimura2017state:
+zouyama2017drone:
     language: jp
     type: Article
-    title: 擬態クローンを用いた自然界における参与観察法について
+    title: 擬態ドローンを用いた自然界における参与観察法について
     author: ["象山, 象太郎"]
     page-range: 337–345
     date: 2017
@@ -28,7 +28,7 @@ kimura2017state:
         publisher: 公益社団法人 計測環境保全学会
 
 # 国際会議論文
-kimura2021control:
+zouyama2021AiL:
     type: Article
     author:  ["Zouyama, Zoutaro"]
     title: Animal-in-the-loop theory for robotic approach to environmentology

@@ -37,5 +37,7 @@
 %WIP%
 
 = 謝辞
+本研究は一切の補助を受けておらず自費にて行った．
+また本論は @zouyama2015theory @zouyama2017drone @zouyama2021AiL に依拠するものである．
 
 境界条件に感謝．
