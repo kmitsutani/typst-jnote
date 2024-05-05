@@ -1,11 +1,8 @@
-![Deploy workflow](https://github.com/kimushun1101/typst-jp-conf-template/actions/workflows/release.yml/badge.svg)
-![Deploy workflow](https://github.com/kimushun1101/typst-jp-conf-template/actions/workflows/gh-pages.yml/badge.svg)
-
-# typst-jp-conf-template
-
-Typst で日本語論文を書くときのテンプレートです．
-
-[vscode-typst.webm](https://github.com/kimushun1101/typst-jp-conf-template/assets/13430937/f227b85b-0266-417b-a24a-54f28f9a71b8)
+# typst-jp-note-template
+このリポジトリは
+[kimushun1101/typst-jp-conf-template](https://github.com/kimushun1101/typst-jp-conf-template) をフォークして作成した
+Typst でアブストラクト付きのノートを書く時のテンプレートです．
+研究の途中で共同研究者等に共有するようなものを想定しています．
 
 
 | ファイル  | 意味                    |
@@ -20,8 +17,7 @@ Typst で日本語論文を書くときのテンプレートです．
 | libs　　      | 体裁を整えるライブラリファイル |
 
 
-雰囲気を掴みたい場合には [こちらの Typst Web Application](https://typst.app/project/w41EH6HRoEsXp95IW_y1WK) をお試しください．  
-コンパイル済みの資料を確認したいだけでしたら [こちらの GitHub Pages](https://kimushun1101.github.io/typst-jp-conf-template/typst-jp-conf.pdf) からお読みできます．
+からお読みできます．
 
 ## 使用方法
 GitHub に慣れていない方は，GitHub ページの `<>Code▼` から `Download ZIP` して展開してください．  
@@ -38,6 +34,12 @@ GitHub に慣れていない方は，GitHub ページの `<>Code▼` から `Dow
  `Ctrl` + `K` のあと `V`) でプレビューを表示．[トップにある動画](#typst-jp-conf-template) の操作です．
 2. `Ctrl` + `S` で PDF を生成．
 
+### Neovim + nvimdots
+
+- LSP: [ayamir/nvimdots](ayamir/nvimdots) を適用すると`mason.nvim` が入るのでNeovim 内で `:MasonInstall typst-lsp` とすると LSP との連携ができるようになります．
+- その他シンタックスハイライトやfiletypeの適用など: [kaarmu/typst.vim](kaarmu/typst.vim)
+- リアルタイムプレビュー: [https://github.com/chomosuke/typst-preview.nvim](chomosuke/typst-preview.nvim)
+
 ### 他のエディターで執筆する場合
 
 筆者は試せていませんが，他のエディターでも同様の拡張機能はありそうです．  
@@ -45,10 +47,7 @@ GitHub に慣れていない方は，GitHub ページの `<>Code▼` から `Dow
 お使いの OS によってインストール方法が異なるため，詳細は[別ページ](docs/native-install.md)にまとめました．
 
 ## 参考元
-- (unofficial) IFAC Conference Template for Typst : https://github.com/typst/packages/tree/main/packages/preview/abiding-ifacconf/0.1.0
-- charged-ieee : https://github.com/typst/packages/tree/main/packages/preview/charged-ieee/0.1.0
-- IEEE style as per the 2021 guidelines, V 01.29.2021. : https://editor.citationstyles.org/styleInfo/?styleId=http%3A%2F%2Fwww.zotero.org%2Fstyles%2Fieee
-- GitHub Pages へのデプロイ : https://github.com/yukukotani/typst-coins-thesis
+[kimushun1101/typst-jp-conf-template](https://github.com/kimushun1101/typst-jp-conf-template) 
 
 ## ライセンス
 参考元にならってライセンスを付与しています．  
