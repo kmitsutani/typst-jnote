@@ -4,7 +4,7 @@
 #let mincho = ("Source Han Serif JP", "MS PMincho", "Hiragino Mincho Pro", "IPAexMincho", "Noto Serif CJK JP")
 #let english = ("Times New Roman", "New Computer Modern")
 
-#let jnote(
+#let main(
   title: [タイトル],
   authors: [著者],
   abstract: none,

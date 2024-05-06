@@ -1,8 +1,8 @@
 // MIT No Attribution
 // Copyright 2024 Shunsuke Kimura
 
-#import "templates/jdocuments/jnote.typ": jnote, appendix
-#show: jnote.with(
+#import "jdocuments/jnote.typ": main, appendix
+#show: main.with(
   title: [象の卵は大きい象], 
   authors: [象山象太郎],
   abstract: [古来より象の卵はもし存在するのならばとても大きいであろうと考えられてきた．
