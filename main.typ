@@ -39,22 +39,10 @@
 = 謝辞
 本研究は一切の補助を受けておらず自費にて行った．
 また本論は @zouyama2015theory @zouyama2017drone @zouyama2021AiL に依拠するものである．
-著者は著者を取り巻くすべての境界条件に感謝する．
+著者は著者の幸福に寄与するすべての境界条件に感謝する．
 
 // Appendix
-#set heading(numbering: "A.1", supplement: [Appendix])
-#show heading: it => {
-  if it.level == 1 and it.numbering != none {
-    [#it.supplement #counter(heading).display():]
-  } else if it.numbering != none {
-    [#counter(heading).display().]
-  }
-
-  h(0.3em)
-  it.body
-  parbreak()
-}
-#counter(heading).update(0)
+#show: appendix.with()
 
 = Appendix 1
 hogehoge

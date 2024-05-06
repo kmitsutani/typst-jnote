@@ -1,21 +1,8 @@
 // Workaround for the lack of an `std` scope.
 #let std-bibliography = bibliography
-
-#let appendix = {
-  set heading(numbering: "A.1", supplement: [Appendix])
-  show heading: it => {
-    if it.level == 1 and it.numbering != none {
-      [#it.supplement #counter(heading).display():]
-    } else if it.numbering != none {
-      [#counter(heading).display().]
-    }
-
-    h(0.3em)
-    it.body
-    parbreak()
-  }
-  counter(heading).update(0)
-}
+#let gothic = ("Source Han Sans JP", "MS PGothic", "Hiragino Kaku Gothic Pro", "IPAexGothic", "Noto Sans CJK JP")
+#let mincho = ("Source Han Serif JP", "MS PMincho", "Hiragino Mincho Pro", "IPAexMincho", "Noto Serif CJK JP")
+#let english = ("Times New Roman", "New Computer Modern")
 
 #let jnote(
   title: [タイトル],
@@ -27,11 +14,6 @@
 ) = {
   // Set document metadata.
   set document(title: title)
-
-  // Set the Fonts
-  let gothic = ("Source Han Sans JP", "MS PGothic", "Hiragino Kaku Gothic Pro", "IPAexGothic", "Noto Sans CJK JP")
-  let mincho = ("Source Han Serif JP", "MS PMincho", "Hiragino Mincho Pro", "IPAexMincho", "Noto Serif CJK JP")
-  let english = ("Times New Roman", "New Computer Modern")
 
   // Configure the page.
   set page(
@@ -151,3 +133,45 @@
     bibliography
   }
 }
+
+#let appendix(body) = {
+  counter(heading).update(0)
+  // Configure headings.
+  set heading(numbering: "A.")
+  show heading: it => locate(loc => {
+    // Find out the final number of the heading counter.
+    let levels = counter(heading).at(loc)
+    let deepest = if levels != () {
+      levels.last()
+    } else {
+      1
+    }
+    if it.level == 1 [
+      // First-level headings are centered smallcaps.
+      // We don't want to number of the acknowledgment section.
+      #set par(first-line-indent: 0pt)
+      #set text(11pt, font: gothic)
+      #v(20pt, weak: true)
+      #if it.numbering != none {
+        numbering("A.", ..levels)
+        h(8pt, weak: true)
+      }
+      #it.body
+      #v(13.75pt, weak: true)
+    ] else [
+      // The other level headings are run-ins.
+      #set par(first-line-indent: 0pt)
+      #set text(10pt, weight: 400)
+      #v(10pt, weak: true)
+      #if it.numbering != none {
+        numbering("A.", ..levels)
+        h(8pt, weak: true)
+      }
+      #it.body
+      #v(10pt, weak: true)
+    ]
+  })
+  body
+}
+
+
