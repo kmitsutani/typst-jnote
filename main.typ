@@ -1,7 +1,7 @@
 // MIT No Attribution
 // Copyright 2024 Shunsuke Kimura
 
-#import "templates/jdocuments/jnote.typ": jnote 
+#import "templates/jdocuments/jnote.typ": jnote, appendix
 #show: jnote.with(
   title: [象の卵は大きい象], 
   authors: [象山象太郎],
@@ -40,3 +40,27 @@
 本研究は一切の補助を受けておらず自費にて行った．
 また本論は @zouyama2015theory @zouyama2017drone @zouyama2021AiL に依拠するものである．
 著者は著者を取り巻くすべての境界条件に感謝する．
+
+// Appendix
+#set heading(numbering: "A.1", supplement: [Appendix])
+#show heading: it => {
+  if it.level == 1 and it.numbering != none {
+    [#it.supplement #counter(heading).display():]
+  } else if it.numbering != none {
+    [#counter(heading).display().]
+  }
+
+  h(0.3em)
+  it.body
+  parbreak()
+}
+#counter(heading).update(0)
+
+= Appendix 1
+hogehoge
+
+= Appendix 2
+
+hugahuga
+
+
