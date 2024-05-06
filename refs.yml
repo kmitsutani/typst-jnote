@@ -31,7 +31,7 @@ zouyama2017drone:
 zouyama2021AiL:
     type: Article
     author:  ["Zouyama, Zoutaro"]
-    title: Animal-in-the-loop theory for robotic approach to environmentology
+    title: Animal-in-the-loop framework for robotic approach to environmentology
     date: 2021
     # page-range: 1-6
     parent:
