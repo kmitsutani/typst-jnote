@@ -1,5 +1,3 @@
-// Workaround for the lack of an `std` scope.
-#let std-bibliography = bibliography
 #let gothic = ("Source Han Sans JP", "MS PGothic", "Hiragino Kaku Gothic Pro", "IPAexGothic", "Noto Sans CJK JP")
 #let mincho = ("Source Han Serif JP", "MS PMincho", "Hiragino Mincho Pro", "IPAexMincho", "Noto Serif CJK JP")
 #let english = ("Times New Roman", "New Computer Modern")
@@ -8,7 +6,6 @@
   title: [タイトル],
   authors: [著者],
   abstract: none,
-  bibliography: none,
   date: none,
   body
 ) = {
@@ -119,19 +116,10 @@
     v(1em, weak: false)
   }
 
-  // Start two column mode and configure paragraph properties.
-  // show: columns.with(2, gutter: 8mm)
-
   // Display the paper's contents.
   body
 
-  // Display bibliography.
-  if bibliography != none {
-    show std-bibliography: set text(9pt)
-    show regex("[0-9a-zA-Z]"): set text(font: english)
-    set std-bibliography(title:  align(center, text(11pt, font:mincho)[参　考　文　献]), style: "jnote.csl")
-    bibliography
-  }
+
 }
 
 #let appendix(body) = {
@@ -174,4 +162,15 @@
   body
 }
 
+#let thebibliography(
+  bibliography_obj,
+  full: false,
+  body
+) = {
+  // Display bibliography.
+  show bibliography: set text(9pt)
+  show regex("[0-9a-zA-Z]"): set text(font: english)
+  set bibliography(title:  align(center, text(11pt, font:gothic)[参　考　文　献]),style: "jnote.csl", full: full)
+  bibliography_obj
+}
 

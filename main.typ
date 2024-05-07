@@ -1,14 +1,13 @@
 // MIT No Attribution
 // Copyright 2024 Shunsuke Kimura
 
-#import "jdocuments/jnote.typ": main, appendix
+#import "jdocuments/jnote.typ": main, appendix, thebibliography
 #show: main.with(
   title: [象の卵は大きい象], 
   authors: [象山象太郎],
   abstract: [古来より象の卵はもし存在するのならばとても大きいであろうと考えられてきた．
              そこで我々は象の習性を研究し卵を発見を探し当てる戦略を立て実際に象の卵を発見した．
              発見された卵は理論的に予測されていた大きさよりも大きかったということをを報告する．],
-  bibliography: bibliography("refs.yml", full: false)
 )
 
 
@@ -42,7 +41,7 @@
 著者は著者の幸福に寄与するすべての境界条件に感謝する．
 
 // Appendix
-#show: appendix.with()
+#show: appendix
 
 = Appendix 1
 hogehoge
@@ -52,3 +51,4 @@ hogehoge
 hugahuga
 
 
+#show: thebibliography.with(bibliography("refs.yml"), full: false)
