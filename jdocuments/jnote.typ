@@ -122,10 +122,10 @@
 
 }
 
-#let appendix(body) = {
+#let appendix(numbering_: "A.", body) = {
   counter(heading).update(0)
   // Configure headings.
-  set heading(numbering: "A.")
+  set heading(numbering: numbering_)
   show heading: it => locate(loc => {
     // Find out the final number of the heading counter.
     let levels = counter(heading).at(loc)
@@ -141,7 +141,7 @@
       #set text(11pt, font: gothic)
       #v(20pt, weak: true)
       #if it.numbering != none {
-        numbering("A.", ..levels)
+        numbering(numbering_, ..levels)
         h(8pt, weak: true)
       }
       #it.body
@@ -152,7 +152,7 @@
       #set text(10pt, weight: 400)
       #v(10pt, weak: true)
       #if it.numbering != none {
-        numbering("A.", ..levels)
+        numbering(numbering_, ..levels)
         h(8pt, weak: true)
       }
       #it.body
@@ -163,7 +163,7 @@
 }
 
 #let thebibliography(
-  bibliography_obj,
+  bibobj,
   full: false,
   body
 ) = {
@@ -171,6 +171,7 @@
   show bibliography: set text(9pt)
   show regex("[0-9a-zA-Z]"): set text(font: english)
   set bibliography(title:  align(center, text(11pt, font:gothic)[参　考　文　献]),style: "jnote.csl", full: full)
-  bibliography_obj
+  bibobj
+  body
 }
 

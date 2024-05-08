@@ -51,4 +51,5 @@ hogehoge
 hugahuga
 
 
-#show: thebibliography.with(bibliography("refs.yml"), full: false)
+// Path の解決は仕様的に無理らしい https://github.com/typst/typst/issues/3394 のでここでbibliographyオブジェクトにして渡す
+#show: thebibliography.with(bibliography("refs.yml"))
