@@ -33,8 +33,7 @@ Typst でアブストラクト付きのノートを書く時のテンプレー�
 ```
 mkdir -p {data-dir}/typst/packages/local
 cd {datadir}/typst/packages/local
-git clone git@github.com:typst/packages.git
-
+git clone git@github.com:kmitsutani/typst-jnote.git jnote
 ```
 
 ### Neovim + nvimdots
