@@ -2,4 +2,4 @@
 name = "jnote"
 version = "0.1.0"
 entrypoint = "jnote.typ"
-version = "0.11.0"
+compiler = "0.11.0"
